@@ -353,7 +353,9 @@ body {
 
 .hero-stats {
     display: flex;
-    gap: 3rem;
+    justify-content: space-between; /* Равномерное распределение */
+    gap: 4rem; /* Равные отступы между элементами */
+    max-width: 600px; /* Ограничиваем ширину для компактности */
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 1.3s;
@@ -362,6 +364,7 @@ body {
 .stat {
     display: flex;
     flex-direction: column;
+    flex: 1; /* Все элементы занимают равное пространство */
 }
 
 .stat-number {
