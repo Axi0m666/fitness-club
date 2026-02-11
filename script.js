@@ -1,4 +1,3 @@
-// Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -9,7 +8,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 
-    // Active nav link
     let current = '';
     const sections = document.querySelectorAll('section');
 
@@ -29,7 +27,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -43,7 +40,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Counter animation
 const counters = document.querySelectorAll('.stat-number');
 let hasAnimated = false;
 
@@ -56,10 +52,11 @@ const animateCounters = () => {
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
-                counter.innerText = Math.ceil(current);
+                counter.innerText = Math.ceil(current).toLocaleString();
                 setTimeout(updateCounter, 20);
             } else {
-                counter.innerText = target;
+                const suffix = target >= 1000 ? '+' : '';
+                counter.innerText = target.toLocaleString() + suffix;
             }
         };
 
@@ -67,7 +64,6 @@ const animateCounters = () => {
     });
 };
 
-// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -78,7 +74,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('aos-animate');
 
-            // Trigger counters when hero stats are visible
             if (entry.target.classList.contains('hero-stats') && !hasAnimated) {
                 animateCounters();
                 hasAnimated = true;
@@ -91,7 +86,6 @@ document.querySelectorAll('[data-aos]').forEach(el => {
     observer.observe(el);
 });
 
-// Schedule tabs
 const tabBtns = document.querySelectorAll('.tab-btn');
 const scheduleDays = document.querySelectorAll('.schedule-day');
 
@@ -110,7 +104,6 @@ tabBtns.forEach(btn => {
     });
 });
 
-// Testimonials Slider
 const testimonialCards = document.querySelectorAll('.testimonial-card');
 const dots = document.querySelectorAll('.dot');
 const prevBtn = document.querySelector('.testimonial-prev');
@@ -148,10 +141,8 @@ dots.forEach((dot, index) => {
     });
 });
 
-// Auto-slide testimonials
 setInterval(nextSlide, 5000);
 
-// Form submissions
 const contactForm = document.getElementById('contactForm');
 const newsletterForm = document.querySelector('.newsletter-form');
 
