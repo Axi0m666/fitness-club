@@ -1,4 +1,3 @@
-/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +40,6 @@ body {
     padding: 100px 0;
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -76,6 +74,8 @@ body {
     font-size: 1.4rem;
     font-weight: 300;
     letter-spacing: 1px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-icon {
@@ -140,7 +140,6 @@ body {
     transition: var(--transition);
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -198,7 +197,6 @@ body {
     justify-content: center;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -264,13 +262,12 @@ body {
     animation-delay: 6s;
 }
 
-/* Hero Content — прижат к левому краю */
 .hero-content {
     width: 42%;
     max-width: 520px;
     z-index: 2;
     position: relative;
-    margin-left: 15%; /* Сдвигаем вправо от левого края */
+    margin-left: 15%;
     padding-left: 0;
 }
 
@@ -353,9 +350,9 @@ body {
 
 .hero-stats {
     display: flex;
-    justify-content: space-between; /* Равномерное распределение */
-    gap: 4rem; /* Равные отступы между элементами */
-    max-width: 600px; /* Ограничиваем ширину для компактности */
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 600px;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 1.3s;
@@ -364,7 +361,7 @@ body {
 .stat {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Все элементы занимают равное пространство */
+    flex: 1;
 }
 
 .stat-number {
@@ -380,19 +377,17 @@ body {
     margin-top: 0.3rem;
 }
 
-/* Hero Visual — справа */
 .hero-visual {
     position: absolute;
-    right: 22%; /* Увеличил отступ от правого края */
+    right: 22%;
     left: auto;
     top: 50%;
     transform: translateY(-50%);
-    width: 380px; /* Немного уменьшил для баланса */
+    width: 380px;
     height: 380px;
     z-index: 1;
 }
 
-/* Дизайнерская визуальная часть */
 .abstract-shape {
     position: absolute;
     width: 100%;
@@ -406,7 +401,6 @@ body {
     filter: drop-shadow(0 30px 60px rgba(212, 165, 116, 0.25));
 }
 
-/* Морфинг форм */
 .morph-path {
     animation: morph 8s ease-in-out infinite;
     transform-origin: center;
@@ -434,7 +428,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Орбитальные круги */
 .orbit-circle {
     position: absolute;
     border-radius: 50%;
@@ -479,7 +472,6 @@ body {
     to { transform: rotate(0deg) translateX(30px) rotate(0deg); }
 }
 
-/* Линии связи */
 .connection-lines {
     position: absolute;
     width: 100%;
@@ -496,7 +488,6 @@ body {
     to { stroke-dashoffset: -20; }
 }
 
-/* Пилюли статистики */
 .stat-pill {
     position: absolute;
     background: white;
@@ -541,7 +532,6 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Section Headers */
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -579,7 +569,6 @@ body {
     margin: 0 auto;
 }
 
-/* About Section */
 .about {
     background: var(--white);
 }
@@ -691,7 +680,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Services Section */
 .services {
     background: var(--gray);
 }
@@ -806,7 +794,6 @@ body {
     transform: translateX(5px);
 }
 
-/* Schedule Section */
 .schedule {
     background: white;
 }
@@ -895,7 +882,6 @@ body {
     color: var(--accent);
 }
 
-/* Trainers Section */
 .trainers {
     background: var(--gray);
 }
@@ -1003,7 +989,6 @@ body {
     border-radius: 20px;
 }
 
-/* Pricing Section */
 .pricing {
     background: white;
 }
@@ -1074,15 +1059,6 @@ body {
     font-weight: 700;
 }
 
-.period {
-    color: var(--text-gray);
-    font-size: 1rem;
-}
-
-.pricing-card.popular .period {
-    color: rgba(255,255,255,0.7);
-}
-
 .pricing-card .features {
     list-style: none;
     margin: 2rem 0;
@@ -1112,7 +1088,6 @@ body {
     border-bottom-color: rgba(255,255,255,0.1);
 }
 
-/* Testimonials */
 .testimonials {
     background: var(--gray);
 }
@@ -1243,7 +1218,6 @@ body {
     border-radius: 5px;
 }
 
-/* Contact Section */
 .contact {
     background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%);
     color: white;
@@ -1355,7 +1329,6 @@ body {
     min-height: 120px;
 }
 
-/* Footer */
 .footer {
     background: #111;
     color: white;
@@ -1486,7 +1459,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Animations */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -1513,7 +1485,6 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* Scroll Animations */
 [data-aos] {
     opacity: 0;
     transform: translateY(30px);
@@ -1525,12 +1496,25 @@ body {
     transform: translateY(0);
 }
 
-/* Responsive */
+@media (max-width: 1200px) {
+    .hero-content {
+        width: 50%;
+        margin-left: 5%;
+    }
+
+    .hero-visual {
+        right: 5%;
+        width: 320px;
+        height: 320px;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-content {
         width: 90%;
         max-width: 600px;
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem;
+        text-align: center;
     }
 
     .hero-visual {
@@ -1542,6 +1526,14 @@ body {
         width: 300px;
         height: 300px;
         margin: 2rem auto;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
 
     .services-grid {
@@ -1570,6 +1562,10 @@ body {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .title-accent::after {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1593,14 +1589,6 @@ body {
 
     .hero-title {
         font-size: 2.2rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-stats {
-        justify-content: center;
     }
 
     .hero-visual {
@@ -1649,15 +1637,90 @@ body {
         min-height: 400px;
     }
 
-    .title-accent::after {
-        max-width: 100%;
-    }
-
     .pill-num {
         font-size: 1.1rem;
     }
 
     .pill-label {
         font-size: 0.6rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .hero-stats {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-tag {
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .pricing-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .amount {
+        font-size: 2.5rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .about-img-1 {
+        width: 80%;
+        height: 60%;
+    }
+
+    .about-img-2 {
+        width: 60%;
+        height: 40%;
+    }
+
+    .experience-badge {
+        padding: 1rem;
+        bottom: 10%;
+    }
+
+    .exp-number {
+        font-size: 2rem;
     }
 }
