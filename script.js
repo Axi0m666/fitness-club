@@ -1,3 +1,14 @@
+window.addEventListener('load', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -157,3 +168,4 @@ newsletterForm.addEventListener('submit', (e) => {
     alert('Спасибо за подписку!');
     newsletterForm.reset();
 });
+
